@@ -73,7 +73,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||
 document.addEventListener('submit',e=>{if(e.target.id==='practiceForm'){e.preventDefault();practiceAnswer(document.querySelector('#practiceAnswer').value)}});
 document.addEventListener('change',e=>{if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.checked;save()}});
 document.addEventListener('input',e=>{if(e.target.id==='examAnswer')captureExam()});
-window.addEventListener('hashchange',()=>{if(location.hash==='#home')navigate('home')});
+document.querySelector('.brand').addEventListener('click',e=>{e.preventDefault();navigate('home')});
 window.addEventListener('beforeunload',()=>{if(exam)captureExam()});
 render();
 </script>
